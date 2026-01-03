@@ -11,7 +11,7 @@ const mockCities = [
         costIndex: 85,
         popularity: 95,
         description: 'Modern metropolis with ancient traditions',
-        image: 'https://images.unsplash.com/photo-1549692520-acc6669e2f0c'
+        image: 'https://github.com/suriya-14/globetrotter/blob/main/Tokyo.png'
     },
     {
         id: 2,
@@ -20,7 +20,7 @@ const mockCities = [
         costIndex: 90,
         popularity: 98,
         description: 'The city of lights and love',
-        image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34'
+        image: 'https://github.com/suriya-14/globetrotter/blob/main/Paris.png'
     },
     {
         id: 3,
@@ -29,7 +29,7 @@ const mockCities = [
         costIndex: 95,
         popularity: 92,
         description: 'The city that never sleeps',
-        image: 'https://images.unsplash.com/photo-1549924231-f129b911e442'
+        image: 'https://github.com/suriya-14/globetrotter/blob/main/Newyork.png'
     },
     {
         id: 4,
@@ -38,7 +38,7 @@ const mockCities = [
         costIndex: 75,
         popularity: 88,
         description: 'Vibrant culture and stunning architecture',
-        image: 'https://images.unsplash.com/photo-1505739778531-3cdd8e6a9a6f'
+        image: 'https://github.com/suriya-14/globetrotter/blob/main/barcelona.png'
     },
     {
         id: 5,
@@ -47,7 +47,7 @@ const mockCities = [
         costIndex: 50,
         popularity: 85,
         description: 'Exotic temples and street food paradise',
-        image: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365'
+        image: 'https://github.com/suriya-14/globetrotter/blob/main/Bangkok.png'
     },
     {
         id: 6,
@@ -56,7 +56,7 @@ const mockCities = [
         costIndex: 88,
         popularity: 82,
         description: 'Luxury and innovation in the desert',
-        image: 'https://images.unsplash.com/photo-1498496294664-d9372eb521f3'
+        image: 'https://github.com/suriya-14/globetrotter/blob/main/dubai.png'
     },
     {
         id: 7,
@@ -65,7 +65,7 @@ const mockCities = [
         costIndex: 80,
         popularity: 94,
         description: 'Ancient history meets modern charm',
-        image: 'https://images.unsplash.com/photo-1526481280691-90652b9a0f3b'
+        image: 'https://github.com/suriya-14/globetrotter/blob/main/Rome.png'
     },
     {
         id: 8,
@@ -74,7 +74,7 @@ const mockCities = [
         costIndex: 92,
         popularity: 90,
         description: 'Royal heritage and cosmopolitan culture',
-        image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e'
+        image: 'https://github.com/suriya-14/globetrotter/blob/main/London.png'
     }
 ];
 
