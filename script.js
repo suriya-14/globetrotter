@@ -4,15 +4,80 @@ const mockUsers = [
 ];
 
 const mockCities = [
-    { id: 1, name: 'Tokyo', country: 'Japan', costIndex: 85, popularity: 95, description: 'Modern metropolis with ancient traditions' },
-    { id: 2, name: 'Paris', country: 'France', costIndex: 90, popularity: 98, description: 'The city of lights and love' },
-    { id: 3, name: 'New York', country: 'USA', costIndex: 95, popularity: 92, description: 'The city that never sleeps' },
-    { id: 4, name: 'Barcelona', country: 'Spain', costIndex: 75, popularity: 88, description: 'Vibrant culture and stunning architecture' },
-    { id: 5, name: 'Bangkok', country: 'Thailand', costIndex: 50, popularity: 85, description: 'Exotic temples and street food paradise' },
-    { id: 6, name: 'Dubai', country: 'UAE', costIndex: 88, popularity: 82, description: 'Luxury and innovation in the desert' },
-    { id: 7, name: 'Rome', country: 'Italy', costIndex: 80, popularity: 94, description: 'Ancient history meets modern charm' },
-    { id: 8, name: 'London', country: 'UK', costIndex: 92, popularity: 90, description: 'Royal heritage and cosmopolitan culture' },
+    {
+        id: 1,
+        name: 'Tokyo',
+        country: 'Japan',
+        costIndex: 85,
+        popularity: 95,
+        description: 'Modern metropolis with ancient traditions',
+        image: 'https://images.unsplash.com/photo-1549692520-acc6669e2f0c'
+    },
+    {
+        id: 2,
+        name: 'Paris',
+        country: 'France',
+        costIndex: 90,
+        popularity: 98,
+        description: 'The city of lights and love',
+        image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34'
+    },
+    {
+        id: 3,
+        name: 'New York',
+        country: 'USA',
+        costIndex: 95,
+        popularity: 92,
+        description: 'The city that never sleeps',
+        image: 'https://images.unsplash.com/photo-1549924231-f129b911e442'
+    },
+    {
+        id: 4,
+        name: 'Barcelona',
+        country: 'Spain',
+        costIndex: 75,
+        popularity: 88,
+        description: 'Vibrant culture and stunning architecture',
+        image: 'https://images.unsplash.com/photo-1505739778531-3cdd8e6a9a6f'
+    },
+    {
+        id: 5,
+        name: 'Bangkok',
+        country: 'Thailand',
+        costIndex: 50,
+        popularity: 85,
+        description: 'Exotic temples and street food paradise',
+        image: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365'
+    },
+    {
+        id: 6,
+        name: 'Dubai',
+        country: 'UAE',
+        costIndex: 88,
+        popularity: 82,
+        description: 'Luxury and innovation in the desert',
+        image: 'https://images.unsplash.com/photo-1498496294664-d9372eb521f3'
+    },
+    {
+        id: 7,
+        name: 'Rome',
+        country: 'Italy',
+        costIndex: 80,
+        popularity: 94,
+        description: 'Ancient history meets modern charm',
+        image: 'https://images.unsplash.com/photo-1526481280691-90652b9a0f3b'
+    },
+    {
+        id: 8,
+        name: 'London',
+        country: 'UK',
+        costIndex: 92,
+        popularity: 90,
+        description: 'Royal heritage and cosmopolitan culture',
+        image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e'
+    }
 ];
+
 
 const mockActivities = [
     { id: 1, name: 'Eiffel Tower Visit', cityId: 2, type: 'Sightseeing', cost: 30, duration: 3, description: 'Iconic landmark with breathtaking views' },
