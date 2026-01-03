@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobeTrotter - Personalized Travel Planning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="screen active">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        
+        <div class="login-container">
+            <div class="login-card">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <h1 class="logo-title">GlobeTrotter</h1>
+                    <p class="logo-subtitle">Plan your dream journey</p>
+                </div>
+                
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="login-email" placeholder="demo@globetrotter.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="login-password" placeholder="••••••••" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">Log In</button>
+                </form>
+                
+                <div class="auth-switch">
+                    <button onclick="showScreen('signup')" class="link-button">Create new account</button>
+                </div>
+                
+                <div class="demo-credentials">
+                    <p>Demo credentials: demo@globetrotter.com / demo123</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Screen -->
+    <div id="signup-screen" class="screen">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        
+        <div class="login-container">
+            <div class="login-card">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <h1 class="logo-title">Join GlobeTrotter</h1>
+                    <p class="logo-subtitle">Start planning amazing trips</p>
+                </div>
+                
+                <form id="signup-form" class="auth-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" id="signup-firstname" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" id="signup-lastname" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="signup-email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="signup-password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                </form>
+                
+                <div class="auth-switch">
+                    <button onclick="showScreen('login')" class="link-button">Already have an account? Log in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Screen -->
+    <div id="dashboard-screen" class="screen">
+        <nav class="navbar">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <div class="nav-logo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <h1>GlobeTrotter</h1>
+                </div>
+                
+                <div class="nav-links">
+                    <button onclick="showScreen('my-trips')" class="nav-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                        </svg>
+                        <span>My Trips</span>
+                    </button>
+                    <button onclick="showScreen('profile')" class="nav-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span id="nav-username">User</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div class="dashboard-header">
+                <h2 class="page-title">Welcome back, <span id="welcome-name">User</span>!</h2>
+                <p class="page-subtitle">Where will your next adventure take you?</p>
+            </div>
+            
+            <div class="dashboard-grid">
+                <button onclick="showScreen('create-trip')" class="dashboard-card featured">
+                    <div class="card-icon large">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3>Plan New Trip</h3>
+                    <p>Start planning your next adventure</p>
+                </button>
+                
+                <div class="dashboard-card">
+                    <div class="stats-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Your Travel Stats</h3>
+                    </div>
+                    <div class="stats-list">
+                        <div class="stat-item">
+                            <span>Total Trips</span>
+                            <strong id="stat-trips">0</strong>
+                        </div>
+                        <div class="stat-item">
+                            <span>Countries Visited</span>
+                            <strong id="stat-countries">0</strong>
+                        </div>
+                        <div class="stat-item">
+                            <span>Total Budget</span>
+                            <strong class="text-primary" id="stat-budget">$0</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="trips-section" class="trips-section" style="display: none;">
+                <h3 class="section-title">Your Trips</h3>
+                <div id="trips-list" class="trips-grid"></div>
+            </div>
+            
+            <div class="popular-section">
+                <h3 class="section-title">Popular Destinations</h3>
+                <div id="popular-cities" class="popular-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Trip Screen -->
+    <div id="create-trip-screen" class="screen">
+        <nav class="navbar">
+            <div class="nav-content">
+                <button onclick="showScreen('dashboard')" class="nav-back">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    <span>Back to Dashboard</span>
+                </button>
+            </div>
+        </nav>
+        
+        <div class="container narrow">
+            <h2 class="page-title">Plan a New Trip</h2>
+            <p class="page-subtitle">Let's start with the basics</p>
+            
+            <div class="form-card">
+                <form id="create-trip-form">
+                    <div class="form-group">
+                        <label>Trip Name</label>
+                        <input type="text" id="trip-name" placeholder="e.g., Summer European Adventure" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Start Date</label>
+                            <input type="date" id="trip-start-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>End Date</label>
+                            <input type="date" id="trip-end-date" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="trip-description" rows="4" placeholder="What's this trip about?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">Create Trip & Build Itinerary</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Trips Screen -->
+    <div id="my-trips-screen" class="screen">
+        <nav class="navbar">
+            <div class="nav-content">
+                <button onclick="showScreen('dashboard')" class="nav-back">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    <span>Back to Dashboard</span>
+                </button>
+                <button onclick="showScreen('create-trip')" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span>New Trip</span>
+                </button>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <h2 class="page-title">My Trips</h2>
+            <div id="my-trips-list" class="trips-list"></div>
+        </div>
+    </div>
+
+    <!-- Itinerary Builder Screen -->
+    <div id="itinerary-builder-screen" class="screen">
+        <nav class="navbar">
+            <div class="nav-content">
+                <button onclick="showScreen('my-trips')" class="nav-back">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    <span>Back to My Trips</span>
+                </button>
+                <button onclick="viewItinerary()" class="btn btn-primary">
+                    Preview Itinerary
+                </button>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div class="itinerary-header">
+                <h2 class="page-title" id="builder-trip-name"></h2>
+                <p id="builder-trip-description"></p>
+            </div>
+            
+            <div class="itinerary-layout">
+                <div class="itinerary-main">
+                    <div id="stops-list" class="stops-list"></div>
+                    <button onclick="openCitySearch()" class="btn btn-primary btn-full btn-lg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        <span>Add New Stop</span>
+                    </button>
+                </div>
+                
+                <div class="itinerary-sidebar">
+                    <div class="summary-card">
+                        <h3>Trip Summary</h3>
+                        <div class="summary-stats">
+                            <div class="summary-item">
+                                <span>Total Stops</span>
+                                <strong id="summary-stops">0</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Total Activities</span>
+                                <strong id="summary-activities">0</strong>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="summary-item">
+                                <span>Estimated Cost</span>
+                                <strong class="text-primary" id="summary-cost">$0</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Itinerary View Screen -->
+    <div id="itinerary-view-screen" class="screen">
+        <nav class="navbar">
+            <div class="nav-content">
+                <button onclick="showScreen('my-trips')" class="nav-back">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    <span>Back</span>
+                </button>
+                <div class="nav-actions">
+                    <button onclick="showBudget()" class="btn btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                        <span>View Budget</span>
+                    </button>
+                    <button onclick="showCalendar()" class="btn btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span>Calendar View</span>
+                    </button>
+                    <button onclick="showShare()" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="18" cy="5" r="3"></circle>
+                            <circle cx="6" cy="12" r="3"></circle>
+                            <circle cx="18" cy="19" r="3"></circle>
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                        </svg>
+                        <span>Share</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container narrow">
+            <div class="itinerary-view-header">
+                <h1 id="view-trip-name"></h1>
+                <p id="view-trip-description"></p>
+                <div class="trip-meta">
+                    <div class="meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span id="view-trip-dates"></span>
+                    </div>
+                    <div class="meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span id="view-trip-stops"></span>
+                    </div>
+                    <div class="meta-item text-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                        <span id="view-trip-cost"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="itinerary-stops" class="itinerary-stops"></div>
+        </div>
+    </div>
+
+    <!-- Budget Screen -->
+    <div id="budget-screen" class="screen">
+        <nav class="navbar">
+            <div class="nav-content">
+                <button onclick="viewItinerary()" class="nav-back">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    <span>Back to Itinerary</span>
+                </button>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <h2 class="page-title">Trip Budget</h2>
+            
+            <div class="budget-grid">
+                <div class="budget-total">
+                    <h3>Total Estimated Cost</h3>
+                    <p class="budget-amount" id="budget-total">$0</p>
+                    <p id="budget-destinations"></p>
+                </div>
+                
+                <div class="budget-breakdown-card">
+                    <h3>Cost Breakdown</h3>
+                    <div id="budget-breakdown" class="breakdown-list"></div>
+                </div>
+            </div>
+            
+            <div class="budget-destinations">
+                <h3 class="section-title">Cost by Destination</h3>
+                <div id="budget-by-destination"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendar Screen -->
+    <div id="calendar-screen" class="screen">
+        <nav class="navbar">
+            <div class="nav-content">
+                <button onclick="viewItinerary()" class="nav-back">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    <span>Back to Itinerary</span>
+                </button>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <h2 class="page-title">Trip Calendar</h2>
+            
+            <div class="calendar-card">
+                <div class="calendar-header">
+                    <div class="weekday">Sun</div>
+                    <div class="weekday">Mon</div>
+                    <div class="weekday">Tue</div>
+                    <div class="weekday">Wed</div>
+                    <div class="weekday">Thu</div>
+                    <div class="weekday">Fri</div>
+                    <div class="weekday">Sat</div>
+                </div>
+                <div id="calendar-grid" class="calendar-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Screen -->
+    <div id="share-screen" class="screen">
+        <nav class="navbar">
+            <div class="nav-content">
+                <button onclick="viewItinerary()" class="nav-back">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    <span>Back to Itinerary</span>
+                </button>
+            </div>
+        </nav>
+        
+        <div class="container narrow">
+            <div class="share-header">
+                <div class="share-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="18" cy="5" r="3"></circle>
+                        <circle cx="6" cy="12" r="3"></circle>
+                        <circle cx="18" cy="19" r="3"></circle>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
+                </div>
+                <h2 class="page-title">Share Your Trip</h2>
+                <p class="page-subtitle">Let others discover your adventure</p>
+            </div>
+            
+            <div class="form-card">
+                <div class="form-group">
+                    <label>Share Link</label>
+                    <div class="input-group">
+                        <input type="text" id="share-url" readonly value="https://globetrotter.com/trips/123">
+                        <button onclick="copyShareLink()" class="btn btn-primary">Copy</button>
+                    </div>
+                </div>
+                
+                <div class="share-divider"></div>
+                
+                <div class="form-group">
+                    <label>Share on social media</label>
+                    <div class="social-buttons">
+                        <button class="btn btn-social btn-facebook">
+                            <span>Facebook</span>
+                        </button>
+                        <button class="btn btn-social btn-twitter">
+                            <span>Twitter</span>
+                        </button>
+                        <button class="btn btn-social btn-instagram">
+                            <span>Instagram</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="share-divider"></div>
+                
+                <div class="toggle-group">
+                    <div>
+                        <h3>Public Visibility</h3>
+                        <p>Allow others to view and copy your trip</p>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Screen -->
+    <div id="profile-screen" class="screen">
+        <nav class="navbar">
+            <div class="nav-content">
+                <button onclick="showScreen('dashboard')" class="nav-back">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    <span>Back to Dashboard</span>
+                </button>
+                <button onclick="logout()" class="btn-logout">Log Out</button>
+            </div>
+        </nav>
+        
+        <div class="container narrow">
+            <h2 class="page-title">Profile Settings</h2>
+            
+            <div class="form-card">
+                <div class="profile-header">
+                    <div class="profile-avatar" id="profile-avatar">U</div>
+                    <div>
+                        <h3 id="profile-name">User Name</h3>
+                        <p id="profile-email">user@example.com</p>
+                    </div>
+                </div>
+                
+                <div class="form-divider"></div>
+                
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="profile-name-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="profile-email-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Language</label>
+                        <select>
+                            <option>English</option>
+                            <option>Spanish</option>
+                            <option>French</option>
+                            <option>German</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-flex">Save Changes</button>
+                        <button type="button" class="btn btn-secondary btn-flex">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="city-search-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add City to Trip</h3>
+                <button onclick="closeModal('city-search-modal')" class="modal-close">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="city-search-input" class="search-input" placeholder="Search cities...">
+                <div id="city-search-results" class="search-results"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="activity-search-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Activity</h3>
+                <button onclick="closeModal('activity-search-modal')" class="modal-close">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="activity-search-input" class="search-input" placeholder="Search activities...">
+                <div id="activity-search-results" class="search-results"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
