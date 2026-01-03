@@ -162,9 +162,12 @@ function updateDashboardStats() {
 
 function renderPopularCities() {
     const container = document.getElementById('popular-cities');
+
     container.innerHTML = mockCities.slice(0, 4).map(city => `
         <div class="city-card">
-            <div class="city-image"></div>
+            <div class="city-image"
+                 style="background-image: url('${city.image}')">
+            </div>
             <h4>${city.name}</h4>
             <p>${city.country}</p>
         </div>
